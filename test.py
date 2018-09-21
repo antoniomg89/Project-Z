@@ -14,4 +14,4 @@ codigo_qr.add_data(info)
 codigo_qr.make(fit=True)
 
 imagen_qr = codigo_qr.make_image()
-imgagen_qr.save("imagen_qr.png")
+imagen_qr.save("imagen_qr.png")
