@@ -8,7 +8,7 @@ import qrcode
 codigo_qr = qrcode.QRCode(version = 1, error_correction = qrcode.constants.ERROR_CORRECT_H, box_size = 10, border = 3,
 )
 
-info = "Información dentro del código QR"
+info = "Información generada"
 
 codigo_qr.add_data(info)
 codigo_qr.make(fit=True)
