@@ -1,5 +1,13 @@
 # Project-Z
-Proyecto en construcción de la asignatura IV.
-Tratará de un servicio generador y validador de códigos QR.
-<br>
-Hará uso de una base de datos NoSQL como MongoDB y Flask como framework.
+
+
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) 
+
+
+Este proyecto será un servicio generador y validador de códigos QR.
+
+
+Hará uso de una base de datos NoSQL como MongoDB.
+
+
+Para su desarrollo se usará Flask como framework.
