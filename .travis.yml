@@ -3,3 +3,4 @@ python:
   - "3.6"
 script:
 - pytest
+- python test_qrclass.py
