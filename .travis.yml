@@ -1,6 +1,8 @@
 language: python
 python:
   - "3.6"
+install:
+  - pip3 install -r requirements.txt
+  
 script:
-- pytest
-- python test_qrclass.py
+  - python3 test_qrclass.py
