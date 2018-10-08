@@ -11,3 +11,23 @@ Hará uso de una base de datos NoSQL como MongoDB.
 
 
 Para su desarrollo se usará Flask como framework y python de lenguaje.
+
+***
+
+La clase [qrclass](https://github.com/antoniomg89/Project-Z/tree/master/doc/info.md) tiene dos propósitos:
+- La creación de un código QR en base a un tamaño, borde e información que contendrá.
+
+- La comprobación de un código QR en base a su información contenida.
+
+
+## Instalar bibliotecas
+
+~~~
+pip3 install -r requirements.txt
+~~~
+
+## Para realizar los tests
+
+~~~
+pytest
+~~~
