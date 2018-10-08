@@ -30,4 +30,6 @@ pip3 install -r requirements.txt
 
 ~~~
 pytest
+
+python3 test_qrclass.py
 ~~~
