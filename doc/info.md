@@ -1,4 +1,4 @@
-#Información
+# Información
 
 Esta clase hace uso de las siguientes bibliotecas de python:
 - [Pillow](https://python-pillow.org/). Su función será la creación de las imágenes de los códigos QR.
