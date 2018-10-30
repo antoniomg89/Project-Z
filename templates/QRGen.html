@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+   <title>QRGen</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+   
+   <link rel="stylesheet" href="../static/css/style.css" type="text/css">
+</head>
+<body>
+   <div class="container">
+      <div class="row py-4">
+         <div class="col text-center">
+            <h2>Generador de códigos QR</h2>
+         </div>
+      </div>
+
+      <div class="row">
+         <div class="col-sm-12  col-md-6">
+            <form action="/registroQR" method="post">
+               <div class="form-group">
+               <input type="number" class="form-control" placeholder="Tamaño" required autocomplete="off" name="tamaño" >
+               </div>
+               <div class="form-group">
+               <input type="number"  class="form-control" placeholder="Borde" required autocomplete="off" name="borde" >
+               </div>
+               <div class="form-group">
+               <input type="text" class="form-control" placeholder="Información" required autocomplete="off" name="informacion"> <br>
+               </div>
+               <div class="form-group">
+               <input type="submit" class="btn btn-primary btn-block" value="Generar QR" name = "gen">
+               </div>
+            </form>
+         </div>
+
+         <div class="col-xs-12 col-md-6 col text-center">
+            {% if filename %}
+            <div class="card card-2">
+               <div class="card-body">
+                  <img src="{{ filename }}">
+               </div>
+            </div>
+            {% endif %}
+         </div>
+      </div>
+   </div>
+</body>
+</html>

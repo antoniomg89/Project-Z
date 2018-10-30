@@ -1,0 +1,38 @@
+body {
+	padding-bottom: 40px;
+}
+
+/** MAIN **/
+#main div.box {
+	background-position: -572px top;
+	background-repeat: repeat-y;
+	padding: 17px;
+	color: #000000;
+
+
+}
+#main div.box h2 {
+	font-weight: normal;
+	letter-spacing: 1px;
+	margin: 5;
+	text-transform: uppercase;
+}
+#main div.box img{
+	margin: 10;
+}
+
+.card-2 {
+   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+   margin-top: 20px;
+}
+
+.card-2 img{
+   width:100%;
+}
+
+
+@media (min-width: 768px) {
+   .card-2 {
+      margin-top: 0px;
+   }
+}

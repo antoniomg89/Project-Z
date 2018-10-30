@@ -9,16 +9,16 @@ class servQR:
         self.qr = qrcode.QRCode(version = 1, error_correction = qrcode.constants.ERROR_CORRECT_L, box_size = 10, border = 4,)
         self.qr.add_data('Constructor')
         self.qr.make(fit=True)
-        self.imagen_qr = self.qr.make_image()
+        self.imagen_qr = self.qr.make_image(fill_color="blue", back_color="white")
 
     def generarQR(self,inf,size,br):
         self.size_qr = size
         self.border_qr = br
         self.qr = qrcode.QRCode(version = 1, error_correction = qrcode.constants.ERROR_CORRECT_L, box_size = size, border = br,)
-        self.info = inf
-        self.qr.add_data(info)
+        self.info_qr = inf
+        self.qr.add_data(inf)
         self.qr.make(fit=True)
-        self.imagen_qr = self.qr.make_image()
+        self.imagen_qr = self.qr.make_image(fill_color="blue", back_color="white")
 
     def getInfo(self):
         return self.info_qr

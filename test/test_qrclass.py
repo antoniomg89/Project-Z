@@ -1,7 +1,7 @@
 import unittest
 import qrcode
 
-from qrclass import servQR
+from src.qrclass import servQR
 
 class TestservQR(unittest.TestCase):
     def setUp(self):

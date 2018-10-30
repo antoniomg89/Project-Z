@@ -1,2 +1,5 @@
+Flask==1.0.2
+gunicorn==19.9.0
+Jinja2==2.10
 Pillow==5.2.0
 qrcode==6.0
