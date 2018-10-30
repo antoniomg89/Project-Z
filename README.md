@@ -5,7 +5,7 @@
 
 [![Build Status](https://travis-ci.com/antoniomg89/Project-Z.svg?branch=master)](https://travis-ci.com/antoniomg89/Project-Z)
 
-[Despliegue Heroku](https://git.heroku.com/projectz-iv.git)
+[Despliegue Heroku](https://projectz-iv.herokuapp.com/)
 
 
 Este proyecto será un servicio generador y validador de códigos QR.
