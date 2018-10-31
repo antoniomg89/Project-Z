@@ -1,12 +1,14 @@
 # Project-Z
 
+***
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 [![Build Status](https://travis-ci.com/antoniomg89/Project-Z.svg?branch=master)](https://travis-ci.com/antoniomg89/Project-Z)
 
-[Despliegue Heroku](https://projectz-iv.herokuapp.com/)
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://projectz-iv.herokuapp.com/genQR)
 
+***
 
 Este proyecto será un servicio generador y validador de códigos QR.
 
@@ -37,3 +39,9 @@ pytest
 
 python3 test_qrclass.py
 ~~~
+
+## Heroku
+
+- [Despliegue](https://projectz-iv.herokuapp.com/)
+
+- [Documentación](https://github.com/antoniomg89/Project-Z/blob/master/doc/Despliegue%20Heroku.md)
