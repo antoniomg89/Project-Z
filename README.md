@@ -8,6 +8,8 @@
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://projectz-iv.herokuapp.com/genQR)
 
+[AZ](https://projectz-iv.azurewebsites.net/) (En pruebas)
+
 ***
 
 Este proyecto será un servicio generador y validador de códigos QR.
