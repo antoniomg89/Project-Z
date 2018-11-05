@@ -43,7 +43,7 @@ python3 test_qrclass.py
 
   - [Documentación](https://github.com/antoniomg89/Project-Z/blob/master/doc/Despliegue%20Heroku.md)
 
-  ### Azure
+- ### Azure
     - [Despliegue](https://projectz-iv.azurewebsites.net/genQR)
 
     - [Documentación](https://github.com/antoniomg89/Project-Z/blob/master/doc/Despliegue%20Azure.md)
