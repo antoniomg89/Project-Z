@@ -18,3 +18,5 @@ Se ha elegido este PaaS por los mismo motivos que Heroku, su uso es sencillo y c
 
 5. En último lugar, en caso de que el archivo principal de la aplicación no se llame "application.py", debe añadirse en archivo de inicio como comando "gunicorn --bind=0.0.0.0 -timeout 600 QRS:app" de esta forma se establece el nombre del archivo principal asociado a la aplicación (QRS)<br><br>
  ![Azure5](./img/Azure5.png)
+
+ Finalmente se accede al enlace de la aplicación que ofrece Azure y se comprueba el [correcto despliegue](https://projectz-iv.azurewebsites.net/genQR).
