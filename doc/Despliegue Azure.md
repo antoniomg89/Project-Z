@@ -1,10 +1,10 @@
 # Azure
 
-Se ha elegido este PaaS por los mismo motivos que Heroku, su uso es sencillos y cubre las necesidades del servicio web.
+Se ha elegido este PaaS por los mismo motivos que Heroku, su uso es sencillo y cubre las necesidades del servicio web.
 
 ### Pasos para realizar el despliegue
 
-1. Crear una cuenta gratuita de Microsoft Azure o acceder a las ofrecidas por parte del profesor.
+1. Crear una cuenta de Microsoft Azure o acceder a las ofrecidas por parte del profesor.
 
 2. Crear la aplicación web.<br><br>
  ![Azure1](./img/Azure1.png)
