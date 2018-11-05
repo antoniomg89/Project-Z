@@ -19,5 +19,3 @@ Se ha elegido este PaaS debido a que ha sido utilizado previamente, proporciona 
  ![heroku4](./img/Heroku4.png)
 
 6. Como último paso (o primero) debe crearse un archivo Procfile en el directorio raiz del repositorio donde se declara un proceso tipo web y a continuación haciendo uso de gunicorn se establece la app asociada (QRS)
-
-De esta forma cuando se realice un push al repositorio se pasan los tests y acto seguido se realiza el despliegue en Heroku.

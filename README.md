@@ -1,14 +1,6 @@
 # Project-Z
 
-***
-
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-
-[![Build Status](https://travis-ci.com/antoniomg89/Project-Z.svg?branch=master)](https://travis-ci.com/antoniomg89/Project-Z)
-
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://projectz-iv.herokuapp.com/genQR)
-
-[AZ](https://projectz-iv.azurewebsites.net/) (En pruebas)
 
 ***
 
@@ -34,7 +26,9 @@ La clase [qrclass](https://github.com/antoniomg89/Project-Z/tree/master/doc/info
 pip3 install -r requirements.txt
 ~~~
 
-## Para realizar los tests
+## Para realizar los tests [![Build Status](https://travis-ci.com/antoniomg89/Project-Z.svg?branch=master)](https://travis-ci.com/antoniomg89/Project-Z)
+
+
 
 ~~~
 pytest
@@ -42,8 +36,14 @@ pytest
 python3 test_qrclass.py
 ~~~
 
-## Heroku
+## Despliegue
 
-- [Despliegue](https://projectz-iv.herokuapp.com/)
+- ### Heroku [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://projectz-iv.herokuapp.com/genQR)
+  - [Despliegue](https://projectz-iv.herokuapp.com/)
 
-- [Documentación](https://github.com/antoniomg89/Project-Z/blob/master/doc/Despliegue%20Heroku.md)
+  - [Documentación](https://github.com/antoniomg89/Project-Z/blob/master/doc/Despliegue%20Heroku.md)
+
+  ### Azure
+    - [Despliegue](https://projectz-iv.azurewebsites.net/genQR) (En pruebas)
+
+    - [Documentación](https://github.com/antoniomg89/Project-Z/blob/master/doc/Despliegue%20Azure.md)
