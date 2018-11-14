@@ -51,3 +51,8 @@ python3 test_qrclass.py
 ## Docker
 
   - Contenedor: [https://hub.docker.com/r/antoniomg89/project-z/](https://hub.docker.com/r/antoniomg89/project-z/)
+
+  - Para ejecutar el contenedor:
+    ~~~
+    docker run -p 5000:5000 antoniomg89/project-z
+    ~~~
