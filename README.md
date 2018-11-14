@@ -39,7 +39,7 @@ python3 test_qrclass.py
 ## Despliegue
 
 - ### Heroku [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://projectz-iv.herokuapp.com/genQR)
-  - [Despliegue](https://projectz-iv.herokuapp.com/)
+  - [Despliegue](https://projectz-iv.herokuapp.com/status)
 
   - [Documentación](https://github.com/antoniomg89/Project-Z/blob/master/doc/Despliegue%20Heroku.md)
 
