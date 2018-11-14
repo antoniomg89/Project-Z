@@ -47,3 +47,7 @@ python3 test_qrclass.py
     - [Despliegue](https://projectz-iv.azurewebsites.net/genQR)
 
     - [Documentación](https://github.com/antoniomg89/Project-Z/blob/master/doc/Despliegue%20Azure.md)
+
+## Docker
+
+  - Contenedor: [https://hub.docker.com/r/antoniomg89/project-z/](https://hub.docker.com/r/antoniomg89/project-z/)
