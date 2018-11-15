@@ -50,8 +50,8 @@ python3 test_qrclass.py
 
 ## Docker
 
-  - Contenedor:
+  - Contenedor: https://projectz-iv.herokuapp.com/status
 
-  - Documentación
+  - [Documentación](https://github.com/antoniomg89/Project-Z/blob/master/doc/Docker.md)
 
-  - Docker Hub:
+  - [Docker Hub](https://hub.docker.com/r/antoniomg89/project-z-iv/):
