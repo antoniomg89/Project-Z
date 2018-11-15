@@ -55,3 +55,8 @@ python3 test_qrclass.py
   - [Documentación](https://github.com/antoniomg89/Project-Z/blob/master/doc/Docker.md)
 
   - [Docker Hub](https://hub.docker.com/r/antoniomg89/project-z-iv/):
+
+    Para ejecutar el contenedor en local:
+    ~~~
+    $docker run -p 5000:5000 antoniomg89/project-z-iv:latest
+    ~~~
