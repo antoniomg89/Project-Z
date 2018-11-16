@@ -22,7 +22,7 @@ script:
 deploy:
   provider: script
   script:
-    #docker push antoniomg89/project-z-iv;
+    #docker push antoniomg89/project-z;
     docker push registry.heroku.com/$HEROKU_APP_NAME/web;
     heroku container:release web --app $HEROKU_APP_NAME
 branch: master
