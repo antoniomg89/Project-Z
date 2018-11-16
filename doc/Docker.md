@@ -1,26 +1,44 @@
 # Documentación de Docker
 
-Se ha cambiado el funcionamiento de realizar tests y desplegar en este hito al incorporar Docker.
+### Pasos para configurar Docker:
 
-Anteriormente se realizaban los tests con Travis y si eran correctos se realizaba un despliegue automático en Heroku.
+Instalar Docker en el sistema y crear una cuenta en [Docker Hub](https://hub.docker.com/).
 
-El funcionamiento a partir de ahora será el siguiente:
+Hecho esto se crea una "automated build" y se selecciona el repositorio del cual va a crear el contenedor.
 
-1. Se pasan los tests en Travis.
-2. Si son correctos se crea/actualiza el contenedor Docker y se sube a Docker Hub.
-3. Se despliega este contenedor en Heroku.
+![DOCKER_HUB1](./img/DockerHub-1.png)
 
-Con este nuevo funcionamiento lo conveniente es manejar todo desde travis.yml.
+En el repositorio de de github que se ha enlazado con Docker Hub hay que crear el correspondiente dockerfile, que contendrá las instrucciones necesarias para crear el contenedor.
 
-### Pasos para configurar el nuevo sistema:
+~~~
+# Use an official Python runtime as a parent image
+FROM python:3.6
 
-Suponemos que ya tenemos una cuenta creada en Heroku y Travis enlazado al repositorio.
+# Set the working directory to /app
+WORKDIR /app
 
-#### 1. Crear una cuenta en [Docker Hub](https://hub.docker.com/).
+# Copy the current directory contents into the container at /app
+COPY . /app
 
-#### 2. Configuracion travis.yml y Docker
+# Install any needed packages specified in requirements.txt
+RUN pip3 install --no-cache-dir -r requirements.txt
 
-Como se va a ejecutar el comando docker para construir el contenedor es necesario indicar en el archivo que se va a hacer uso de **sudo**:
+# Make port 5000 available to the world outside this container
+EXPOSE 5000
+
+# Run app.py when the container launches
+ENTRYPOINT ["python3"]
+CMD ["QRS.py"]
+
+~~~
+
+Con esto las próximas veces que se haga un push al repositorio de Github se actualizará el contenedor de forma automática.
+
+### Pasos para configurar el despliegue del contenedor en Heroku:
+
+El despliegue automático del contenedor se realizará con Travis.
+
+Como se va a ejecutar el comando docker es necesario indicar en el archivo que se va a hacer uso de **sudo**:
 
 ~~~
 sudo: required
@@ -41,7 +59,6 @@ services:
   - docker
 
 before_install:
-  - wget -qO- https://toolbelt.heroku.com/install.sh | sh
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 ~~~
 
