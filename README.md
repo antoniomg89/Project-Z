@@ -58,5 +58,5 @@ python3 test_qrclass.py
 
     Para ejecutar el contenedor en local:
     ~~~
-    $docker run -p 5000:5000 antoniomg89/project-z-iv:latest
+    $docker run -p 5000:5000 antoniomg89/project-z
     ~~~
