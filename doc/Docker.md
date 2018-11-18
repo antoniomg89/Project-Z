@@ -58,7 +58,7 @@ install:
 
 script:
   - pytest
-  - docker build -t antoniomg89/project-z-iv .
+  - docker build -t antoniomg89/project-z .
 ~~~
 
 Se trata de realizar el despliegue del contenedor nada más pasar los tests.
@@ -91,8 +91,8 @@ Una vez realizado esto hay que hacer un push de la imagen de Docker a Heroku.
 ~~~
 script:
   - pytest
-  - docker build -t antoniomg89/project-z-iv .
-  - docker tag antoniomg89/project-z-iv registry.heroku.com/$HEROKU_APP_NAME/web
+  - docker build -t antoniomg89/project-z .
+  - docker tag antoniomg89/project-z registry.heroku.com/$HEROKU_APP_NAME/web
 
 deploy:
   provider: script
