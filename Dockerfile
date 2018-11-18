@@ -1,18 +1,18 @@
-# Use an official Python runtime as a parent image
+# Imagen de python a usar
 FROM python:3.6
 
-# Set the working directory to /app
+# Directorio donde va a alojarse la aplicación
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
+# Copiar los contenidos del repositorio al directorio
 COPY . /app
 
-# Install any needed packages specified in requirements.txt
+# Instalar librerías necesarias de requirements.txt
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-# Make port 5000 available to the world outside this container
+# Establecer 5000 como puerto por defecto. Este comando se ignora en el despliegue de Heroku
 EXPOSE 5000
 
-# Run app.py when the container launches
+# Cuando se lanza el contenedor se ejecuta QRS.py
 ENTRYPOINT ["python3"]
 CMD ["QRS.py"]
