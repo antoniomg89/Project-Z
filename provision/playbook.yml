@@ -1,0 +1,78 @@
+# Hosts a los que conectarse para realizar el provisionamiento.
+- hosts: all
+
+  #Se va a hacer uso del superusuario para poder utilizar docker.
+  sudo: yes
+
+  # Usuario a utilizar.
+  remote_user: amgarcia
+
+#  vars:
+#    service_account_file: /home/amgarcia/II/Pruebas/projectz-1cb22d1d7fc5.json
+#    project: projectz
+#    auth_kind: serviceaccount
+
+  # Tareas a realizar.
+  tasks:
+
+    # Agregar repositorio python 3.6
+    - name: Agregar repositorio
+      become: true
+      apt_repository: repo=ppa:deadsnakes/ppa state=present
+
+    # Actualizar apt.
+    - name: Actualizar apt
+      become: true
+      apt:
+        upgrade: yes
+        update_cache: yes
+
+    # Instalar Python 3.6.
+    - name: Instalar Python 3.6
+      become: true
+      apt: pkg=python3.6 state=present
+
+    # Instalar pip
+    - name: Instalar pip
+      become: true
+      apt: pkg=python-pip state=latest
+
+    # Instalo pip3.
+    - name: Instalar pip3
+      become: true
+      apt: pkg=python3-pip state=latest
+
+    # Instalar setuptools.
+    - name: Instalar setuptools
+      become: true
+      pip: name=setuptools state=latest
+
+    # Instalar git
+    - name: Instalar git
+      become: true
+      apt: pkg=git state=latest
+
+    # Clonar el repositorio de github
+    - git:
+        repo: https://github.com/antoniomg89/Project-Z.git
+        dest: /vagrant/prz
+
+    # Instalar Flask.
+    - pip:
+        name: Flask
+        executable: pip3
+
+    # Instalar Jinja2.
+    - pip:
+        name: Jinja2
+        executable: pip3
+
+    # Instalar Pillow.
+    - pip:
+        name: Pillow
+        executable: pip3
+
+    # Instalar qrcode.
+    - pip:
+        name: qrcode
+        executable: pip3
