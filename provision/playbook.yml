@@ -76,3 +76,8 @@
     - pip:
         name: qrcode
         executable: pip3
+
+    # Instalar gunicorn.
+    - pip:
+        name: gunicorn
+        executable: pip3

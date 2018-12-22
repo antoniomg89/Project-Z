@@ -3,4 +3,4 @@ from fabric.api import *
 def IniciarApp():
 		# Iniciar aplicación.
         run ('echo inicia app')
-        run('python3 /vagrant/prz/QRS.py &',pty=False)
+        run('cd /vagrant/prz/QRS.py && sudo gunicorn QRS:app -b 0.0.0.0:80')
