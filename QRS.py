@@ -27,7 +27,7 @@ qr = servQR()
 def statusQR():
     return jsonify(status='OK')
 
-@app.route('/status',)
+@app.route('/status')
 def statusQR():
     return jsonify(status='OK')
 
