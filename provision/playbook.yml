@@ -1,7 +1,7 @@
 # Hosts a los que conectarse para realizar el provisionamiento.
 - hosts: all
 
-  #Se va a hacer uso del superusuario para poder utilizar docker.
+  #Se va a hacer uso del superusuario para ejecutar gunicorn.
   sudo: yes
 
   # Usuario a utilizar.

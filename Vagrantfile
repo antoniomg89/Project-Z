@@ -15,41 +15,33 @@
 # limitations under the License.
 
 Vagrant.configure("2") do |config|
-    # Tipo de máquina.
+    # VM.
     config.vm.box = "google/gce"
 
-    #config.ssh.private_key_path = '~/.ssh/id_rsa'
-
     config.vm.provider :google do |google, override|
-        # ID del proyecto.
+        # ID del proyecto en google cloud platform.
         #google.google_project_id = ENV['ID_GCP']
         google.google_project_id ="projectz"
 
-        # Email del cliente de google.
+        # Email.
         #google.google_client_email = ENV['CEM']
         google.google_client_email = "iv-524@projectz.iam.gserviceaccount.com"
 
-        # JSON con información de la cuenta de Google Cloud, proyecto y demás.
+        # clave cuenta de servicio.
         #google.google_json_key_location = ENV['JLOC']
         google.google_json_key_location = "/home/amgarcia/II/proz.json"
 
-
-        # Configuración de la máquina.
-        # Imagen: Ubuntu 16.04 LTS
-        # Zona donde se ubica la VM: Oeste de Europa (Londres)
-        # Nombre de la VM: ipcontainer
-        # Características de la VM: 1 Core, 1,7GB de RAM y 10GB de HDD.
         google.image_family = 'ubuntu-1604-lts'
         google.zone = 'europe-west2-a'
         google.name = 'projectz'
         google.machine_type = 'g1-small'
 
-        # Configuración del usuario y private_key para conectarme por SSH.
+        # Configuración de usuario y clave privada para la conexión por SSH.
         override.ssh.username = 'amgarcia'
         override.ssh.private_key_path = '~/.ssh/google_compute_engine'
     end
 
-    # Provisionamiento con un playbook de Ansible.
+    # Provisionamiento Ansible.
     config.vm.provision "ansible" do |ansible|
       ansible.playbook = "provision/playbook.yml"
     end

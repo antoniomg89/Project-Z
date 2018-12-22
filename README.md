@@ -36,7 +36,7 @@ pytest
 python3 test_qrclass.py
 ~~~
 
-## Despliegue
+## Despliegue Heroku
 
 - ### Heroku [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://projectz-iv.herokuapp.com/genQR)
   - [Despliegue](https://projectz-iv.herokuapp.com/status)
@@ -44,7 +44,7 @@ python3 test_qrclass.py
   - [Documentación](https://github.com/antoniomg89/Project-Z/blob/master/doc/Despliegue%20Heroku.md)
 
 - ### Azure
-    - [Despliegue](https://projectz-iv.azurewebsites.net/genQR)
+    - [Despliegue](https://projectz-iv.azurewebsites.net/genQR)(inactivo)
 
     - [Documentación](https://github.com/antoniomg89/Project-Z/blob/master/doc/Despliegue%20Azure.md)
 
@@ -60,3 +60,9 @@ python3 test_qrclass.py
     ~~~
     $docker run -p 5000:5000 antoniomg89/project-z:latest
     ~~~
+
+## Provisionamiento y despliegue en Google Cloud Platform
+
+  - Despliegue final: 35.246.76.197
+  
+  - [Documentación](https://github.com/antoniomg89/Project-Z/blob/master/doc/Despliegue%20final.md)
