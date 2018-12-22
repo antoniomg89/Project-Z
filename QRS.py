@@ -23,6 +23,10 @@ bordeqr = None
 informacionqr = None
 qr = servQR()
 
+@app.route('/',)
+def statusQR():
+    return jsonify(status='OK')
+
 @app.route('/status',)
 def statusQR():
     return jsonify(status='OK')
