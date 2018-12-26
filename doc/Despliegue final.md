@@ -187,7 +187,7 @@ def IniciarApp():
 Con esto ya solo hacía falta introducir en la terminal:
 
 ~~~
-$fab IniciarApp()
+$fab IniciarApp
 ~~~
 
 Pero debido a problemas con la instalación de fabric me daba error en la ejecución del comando anterior.
