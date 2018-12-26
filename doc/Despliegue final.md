@@ -9,7 +9,7 @@ A continuación se muestra el fichero de provisionamiento de ansible:
 - hosts: all
 
   #Se va a hacer uso del superusuario para ejecutar gunicorn.
-  sudo: yes
+  #sudo: yes
 
   # Usuario a utilizar.
   remote_user: amgarcia
@@ -158,14 +158,53 @@ $vagrant provision
 
 Para terminar, con la vm creada y provisionada, se procede al despliegue del servicio con fabric:
 
+**(Actualización en referencia a los problemas con la instalación de fabric)**
+
+Como puede observarse, el apartado del despliegue con fabric estaba sin documentar.
+
+Con respecto al tema de la ejecución del archivo fabfile.py el último viernes en clase hice un primer fabfile.py con lo siguiente:
+
 ~~~
 from fabric.api import *
 
 def IniciarApp():
-		# Iniciar aplicación.
-        run ('echo inicia app')
-        run('cd /vagrant/prz/QRS.py && sudo gunicorn QRS:app -b 0.0.0.0:80')
+# Iniciar aplicación.
+  run ('echo inicia app')
+  run('python3 /vagrant/prz/QRS.py &')
 ~~~
+
+Cuando le enseñé esta versión a JJ, siguiendo su sugerencia, cambié la orden **run('python3 /vagrant/prz/QRS.py &')** por la correspondiente usando gunicorn, quedando el archivo fabfile.py así:
+
+~~~
+from fabric.api import *
+
+def IniciarApp():
+# Iniciar aplicación.
+  run ('echo inicia app')
+  run('cd /vagrant/prz/ && sudo gunicorn QRS:app -b 0.0.0.0:80')
+~~~
+
+Con esto ya solo hacía falta introducir en la terminal:
+
+~~~
+$fab IniciarApp()
+~~~
+
+Pero debido a problemas con la instalación de fabric me daba error en la ejecución del comando anterior.
+Estuve probando a instalar fabric con pip y con apt-get, pero el problema persistía (y a día de hoy también, incluso probando con otro ordenador).
+Debido a esto y ante la necesidad de enviar el hito tuve que lanzar la aplicación a través de gcloud con el mismo comando que puse en el fabfile:
+
+~~~
+gcloud compute ssh --zone europe-west2-a projectz -- 'cd /vagrant/prz && sudo gunicorn QRS:app -b 0.0.0.0:80'
+~~~
+
+De esta forma pude lanzar de forma correcta la aplicación.
+
+En relación al archivo fabfile.py creo que está de forma correcta.
+
+He hecho esta actualización para dejar claro como he realizado el apartado del despliegue en vista de no haber solucionado los problemas previamente mencionados y que se me resten los puntos pertinentes en relación a este tema.
+
+**(Fin actualización)**
 
 Comprobamos que se puede acceder a nuestra dirección (http://35.246.76.197/genQR):
 
