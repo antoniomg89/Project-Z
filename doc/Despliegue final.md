@@ -158,56 +158,43 @@ $vagrant provision
 
 Para terminar, con la vm creada y provisionada, se procede al despliegue del servicio con fabric:
 
-**(Actualización en referencia a los problemas con la instalación de fabric)**
+**(Actualización final en referencia a los problemas con la instalación de fabric)**
 
-Como puede observarse, el apartado del despliegue con fabric estaba sin documentar.
+Después de casi una semana he conseguido instalar sin problema fabric.
+Probando el archivo fabfile.py he podido comprobar que contenía diversos errores.
 
-Con respecto al tema de la ejecución del archivo fabfile.py el último viernes en clase hice un primer fabfile.py con lo siguiente:
+Versión actual de fabfile.py:
 
 ~~~
+#-*- coding: utf-8 -*-
 from fabric.api import *
 
-def IniciarApp():
-# Iniciar aplicación.
-  run ('echo inicia app')
-  run('python3 /vagrant/prz/QRS.py &')
+
+# Información del host
+def prod():
+    env.user = 'amgarcia'
+    env.hosts = ['35.246.76.197']
+
+# Iniciar aplicación con gunicorn
+def arranca():
+    run('cd /vagrant/prz/ && sudo gunicorn QRS:app -b 0.0.0.0:80')
+
+# Detener proceso gunicorn
+def para():
+    sudo('pkill gunicorn')
 ~~~
 
-Cuando le enseñé esta versión a JJ, siguiendo su sugerencia, cambié la orden **run('python3 /vagrant/prz/QRS.py &')** por la correspondiente usando gunicorn, quedando el archivo fabfile.py así:
+Este archivo se ejecuta de las siguientes formas:
 
 ~~~
-from fabric.api import *
-
-def IniciarApp():
-# Iniciar aplicación.
-  run ('echo inicia app')
-  run('cd /vagrant/prz/ && sudo gunicorn QRS:app -b 0.0.0.0:80')
+$fab prod arranca
+$fab prod para
 ~~~
 
-Con esto ya solo hacía falta introducir en la terminal:
+Se ha creado una vm de prueba (copia de la original del proyecto) para realizar las últimas pruebas con fabric, por lo que en la captura de pantalla varía la dirección ip.
 
-~~~
-$fab IniciarApp
-~~~
+Comprobamos que fabric se ejecuta correctamente y se puede acceder a nuestra dirección:
 
-Pero debido a problemas con la instalación de fabric me daba error en la ejecución del comando anterior.
-Estuve probando a instalar fabric con pip y con apt-get, pero el problema persistía (y a día de hoy también, incluso probando con otro ordenador).
-Debido a esto y ante la necesidad de enviar el hito tuve que lanzar la aplicación a través de gcloud con el mismo comando que puse en el fabfile:
-
-~~~
-gcloud compute ssh --zone europe-west2-a projectz -- 'cd /vagrant/prz && sudo gunicorn QRS:app -b 0.0.0.0:80'
-~~~
-
-De esta forma pude lanzar de forma correcta la aplicación.
-
-En relación al archivo fabfile.py creo que está de forma correcta.
-
-He hecho esta actualización para dejar claro como he realizado el apartado del despliegue en vista de no haber solucionado los problemas previamente mencionados y que se me resten los puntos pertinentes en relación a este tema.
+![DespliegueFabric](./img/DFabric.png)
 
 **(Fin actualización)**
-
-Comprobamos que se puede acceder a nuestra dirección (http://35.246.76.197/genQR):
-
-![DFinal4](./img/DFinal4.png)
-
-Queda pendiente pasar el ID del proyecto, email y clave de cuenta de servicio como variables de entorno en el vagrantfile.
