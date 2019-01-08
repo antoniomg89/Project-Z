@@ -198,3 +198,11 @@ Comprobamos que fabric se ejecuta correctamente y se puede acceder a nuestra dir
 ![DespliegueFabric](./img/DFabric.png)
 
 **(Fin actualización)**
+
+## Bibliografía
+
+Referente al Vagrantfile, claves ssh y fabfile.
+
+https://blog.eduonix.com/system-programming/learn-use-vagrant-cloud/
+https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys
+https://stackoverflow.com/questions/2326797/how-to-set-target-hosts-in-fabric-file
