@@ -158,11 +158,6 @@ $vagrant provision
 
 Para terminar, con la vm creada y provisionada, se procede al despliegue del servicio con fabric:
 
-**(Actualización final en referencia a los problemas con la instalación de fabric)**
-
-Después de casi una semana he conseguido instalar sin problema fabric.
-Probando el archivo fabfile.py he podido comprobar que contenía diversos errores.
-
 Versión actual de fabfile.py:
 
 ~~~
@@ -196,8 +191,6 @@ Se ha creado una vm de prueba (copia de la original del proyecto) para realizar 
 Comprobamos que fabric se ejecuta correctamente y se puede acceder a nuestra dirección:
 
 ![DespliegueFabric](./img/DFabric.png)
-
-**(Fin actualización)**
 
 ## Bibliografía
 
